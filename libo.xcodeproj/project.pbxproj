@@ -24,6 +24,11 @@
 		936461D61E9CD89000CA067C /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 936461C31E9CD89000CA067C /* UIProgressView+AFNetworking.m */; };
 		936461D71E9CD89000CA067C /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 936461C51E9CD89000CA067C /* UIRefreshControl+AFNetworking.m */; };
 		936461D81E9CD89000CA067C /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 936461C71E9CD89000CA067C /* UIWebView+AFNetworking.m */; };
+		9376DD8A1E9DEADF00C3E703 /* CoreSVP.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9376DD801E9DEADF00C3E703 /* CoreSVP.bundle */; };
+		9376DD8B1E9DEADF00C3E703 /* CoreSVP.m in Sources */ = {isa = PBXBuildFile; fileRef = 9376DD821E9DEADF00C3E703 /* CoreSVP.m */; };
+		9376DD8C1E9DEADF00C3E703 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9376DD851E9DEADF00C3E703 /* SVIndefiniteAnimatedView.m */; };
+		9376DD8D1E9DEADF00C3E703 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9376DD871E9DEADF00C3E703 /* SVProgressHUD.bundle */; };
+		9376DD8E1E9DEADF00C3E703 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9376DD891E9DEADF00C3E703 /* SVProgressHUD.m */; };
 		93C7F20F1E9A802C007B7CB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C7F20E1E9A802C007B7CB9 /* main.m */; };
 		93C7F2121E9A802C007B7CB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C7F2111E9A802C007B7CB9 /* AppDelegate.m */; };
 		93C7F2151E9A802C007B7CB9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C7F2141E9A802C007B7CB9 /* ViewController.m */; };
@@ -88,6 +93,15 @@
 		936461C51E9CD89000CA067C /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		936461C61E9CD89000CA067C /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		936461C71E9CD89000CA067C /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		9376DD801E9DEADF00C3E703 /* CoreSVP.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CoreSVP.bundle; sourceTree = "<group>"; };
+		9376DD811E9DEADF00C3E703 /* CoreSVP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSVP.h; sourceTree = "<group>"; };
+		9376DD821E9DEADF00C3E703 /* CoreSVP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreSVP.m; sourceTree = "<group>"; };
+		9376DD841E9DEADF00C3E703 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		9376DD851E9DEADF00C3E703 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		9376DD861E9DEADF00C3E703 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		9376DD871E9DEADF00C3E703 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		9376DD881E9DEADF00C3E703 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		9376DD891E9DEADF00C3E703 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		93C7F20A1E9A802C007B7CB9 /* libo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = libo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C7F20E1E9A802C007B7CB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93C7F2101E9A802C007B7CB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -182,6 +196,30 @@
 			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
+		9376DD7F1E9DEADF00C3E703 /* CoreSVP */ = {
+			isa = PBXGroup;
+			children = (
+				9376DD801E9DEADF00C3E703 /* CoreSVP.bundle */,
+				9376DD811E9DEADF00C3E703 /* CoreSVP.h */,
+				9376DD821E9DEADF00C3E703 /* CoreSVP.m */,
+				9376DD831E9DEADF00C3E703 /* SVProgressHUD */,
+			);
+			path = CoreSVP;
+			sourceTree = "<group>";
+		};
+		9376DD831E9DEADF00C3E703 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				9376DD841E9DEADF00C3E703 /* SVIndefiniteAnimatedView.h */,
+				9376DD851E9DEADF00C3E703 /* SVIndefiniteAnimatedView.m */,
+				9376DD861E9DEADF00C3E703 /* SVProgressHUD-Prefix.pch */,
+				9376DD871E9DEADF00C3E703 /* SVProgressHUD.bundle */,
+				9376DD881E9DEADF00C3E703 /* SVProgressHUD.h */,
+				9376DD891E9DEADF00C3E703 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		93C7F2011E9A802C007B7CB9 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +243,7 @@
 		93C7F20C1E9A802C007B7CB9 /* libo */ = {
 			isa = PBXGroup;
 			children = (
+				9376DD7F1E9DEADF00C3E703 /* CoreSVP */,
 				936461A21E9CD89000CA067C /* AFNetworking */,
 				93C7F2101E9A802C007B7CB9 /* AppDelegate.h */,
 				93C7F2111E9A802C007B7CB9 /* AppDelegate.m */,
@@ -352,6 +391,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9376DD8D1E9DEADF00C3E703 /* SVProgressHUD.bundle in Resources */,
+				9376DD8A1E9DEADF00C3E703 /* CoreSVP.bundle in Resources */,
 				93C7F21D1E9A802C007B7CB9 /* LaunchScreen.storyboard in Resources */,
 				93C7F21A1E9A802C007B7CB9 /* Assets.xcassets in Resources */,
 				93C7F2181E9A802C007B7CB9 /* Main.storyboard in Resources */,
@@ -388,10 +429,13 @@
 				936461CF1E9CD89000CA067C /* AFURLResponseSerialization.m in Sources */,
 				936461CD1E9CD89000CA067C /* AFURLConnectionOperation.m in Sources */,
 				936461D41E9CD89000CA067C /* UIButton+AFNetworking.m in Sources */,
+				9376DD8C1E9DEADF00C3E703 /* SVIndefiniteAnimatedView.m in Sources */,
+				9376DD8E1E9DEADF00C3E703 /* SVProgressHUD.m in Sources */,
 				936461D21E9CD89000CA067C /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				936461CC1E9CD89000CA067C /* AFSecurityPolicy.m in Sources */,
 				936461D71E9CD89000CA067C /* UIRefreshControl+AFNetworking.m in Sources */,
 				936461D81E9CD89000CA067C /* UIWebView+AFNetworking.m in Sources */,
+				9376DD8B1E9DEADF00C3E703 /* CoreSVP.m in Sources */,
 				936461CA1E9CD89000CA067C /* AFHTTPSessionManager.m in Sources */,
 				936461D31E9CD89000CA067C /* UIAlertView+AFNetworking.m in Sources */,
 				936461CE1E9CD89000CA067C /* AFURLRequestSerialization.m in Sources */,
