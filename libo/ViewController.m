@@ -30,6 +30,7 @@ static NSString *urlString = @"http://libo.toumaps.com/index.html";
     
      [self cleanCacheAndCookie];
     _webView.delegate = self;
+//    _webView.scrollView.scrollEnabled = NO;
     _afnetworkReachabilityManager = [AFNetworkReachabilityManager sharedManager];
     [_afnetworkReachabilityManager startMonitoring];
     
@@ -72,12 +73,23 @@ static NSString *urlString = @"http://libo.toumaps.com/index.html";
 //    [_afnetworkReachabilityManager startMonitoring];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    // 设置状态栏颜色
+    [self setStatusBarBackgroundColor:[UIColor colorWithRed:1/255.0 green:0/255.0 blue:121/255.0 alpha:1.0]];
+    // 设置状态栏字体颜色白色（UIStatusBarStyleDefault是黑色）
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     if (!_afnetworkReachabilityManager.isReachable) {
         [SVProgressHUD showWithStatus:@"正在加载中..." maskType:SVProgressHUDMaskTypeClear];
     }
+    
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -137,5 +149,13 @@ static NSString *urlString = @"http://libo.toumaps.com/index.html";
     [cache setMemoryCapacity:0];
 }
 
+// 设置状态栏颜色
+- (void)setStatusBarBackgroundColor:(UIColor *)color {
+    
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+        statusBar.backgroundColor = color;
+    }
+}
 
 @end
