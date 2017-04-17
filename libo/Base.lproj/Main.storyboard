@@ -25,16 +25,24 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic" translatesAutoresizingMaskIntoConstraints="NO" id="Jgd-26-giF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="RYu-aL-fSL" secondAttribute="trailing" id="9cX-Zn-Yhq"/>
                             <constraint firstItem="RYu-aL-fSL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Aks-gi-0Ts"/>
                             <constraint firstItem="RYu-aL-fSL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Arm-iV-8ea"/>
+                            <constraint firstItem="Jgd-26-giF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Hf2-nE-RqG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Jgd-26-giF" secondAttribute="bottom" id="KkP-3r-I9h"/>
+                            <constraint firstItem="Jgd-26-giF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="bAC-rx-MGb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RYu-aL-fSL" secondAttribute="bottom" id="lTI-cj-rm3"/>
+                            <constraint firstAttribute="trailing" secondItem="Jgd-26-giF" secondAttribute="trailing" id="pjx-yr-2ld"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pic" destination="Jgd-26-giF" id="H1v-li-NM6"/>
                         <outlet property="webView" destination="RYu-aL-fSL" id="eKI-Ll-9fI"/>
                     </connections>
                 </viewController>
@@ -42,4 +50,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="pic" width="320" height="568"/>
+    </resources>
 </document>

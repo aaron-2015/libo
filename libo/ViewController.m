@@ -18,6 +18,7 @@ static NSString *urlString = @"http://libo.toumaps.com/index.html";
 @property (strong, nonatomic) AFNetworkReachabilityManager *afnetworkReachabilityManager;
 //@property (strong, nonatomic) UIAlertView *alertView;
 @property (strong, nonatomic) NSTimer *timer;
+@property (weak, nonatomic) IBOutlet UIImageView *pic;
 
 @end
 
@@ -30,12 +31,12 @@ static NSString *urlString = @"http://libo.toumaps.com/index.html";
     
      [self cleanCacheAndCookie];
     _webView.delegate = self;
-//    _webView.scrollView.scrollEnabled = NO;
+    _webView.scrollView.scrollEnabled = NO;
     _afnetworkReachabilityManager = [AFNetworkReachabilityManager sharedManager];
     [_afnetworkReachabilityManager startMonitoring];
     
     if (_afnetworkReachabilityManager.isReachable) {
-        [SVProgressHUD dismiss];
+//        [SVProgressHUD dismiss];
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
         [self.webView loadRequest:request];
     } else {
@@ -43,53 +44,14 @@ static NSString *urlString = @"http://libo.toumaps.com/index.html";
         [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
     }
     
-//    __weak typeof(self) weakSelf = self;
-//    [_afnetworkReachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-//        
-//        NSLog(@"%ld",(long)status);
-//        
-//        switch (status) {
-//            case AFNetworkReachabilityStatusUnknown:
-//            case AFNetworkReachabilityStatusNotReachable:
-//            {
-////                [weakSelf.alertView show];
-//            }
-//                break;
-//            case AFNetworkReachabilityStatusReachableViaWiFi:
-//            case AFNetworkReachabilityStatusReachableViaWWAN:
-//            {
-//                [weakSelf.afnetworkReachabilityManager stopMonitoring];
-//                [weakSelf.alertView dismissWithClickedButtonIndex:0 animated:YES];
-//                
-//                NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
-//                [weakSelf.webView loadRequest:request];
-//            }
-//                break;
-//            default:
-//                break;
-//        }
-//    }];
-    
-//    [_afnetworkReachabilityManager startMonitoring];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    // 设置状态栏颜色
-    [self setStatusBarBackgroundColor:[UIColor colorWithRed:1/255.0 green:0/255.0 blue:121/255.0 alpha:1.0]];
-    // 设置状态栏字体颜色白色（UIStatusBarStyleDefault是黑色）
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    if (!_afnetworkReachabilityManager.isReachable) {
-        [SVProgressHUD showWithStatus:@"正在加载中..." maskType:SVProgressHUDMaskTypeClear];
-    }
-    
-    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        _pic.hidden = YES;
+        // 设置状态栏颜色
+        [self setStatusBarBackgroundColor:[UIColor colorWithRed:1/255.0 green:0/255.0 blue:121/255.0 alpha:1.0]];
+        // 设置状态栏字体颜色白色（UIStatusBarStyleDefault是黑色）
+        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    });
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -108,7 +70,7 @@ static NSString *urlString = @"http://libo.toumaps.com/index.html";
         [_timer invalidate];
         _timer = nil;
         
-        [SVProgressHUD dismiss];
+//        [SVProgressHUD dismiss];
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
         [self.webView loadRequest:request];
     }
