@@ -31,7 +31,7 @@ static NSString *urlString = @"http://libo.toumaps.com/index.html";
     
      [self cleanCacheAndCookie];
     _webView.delegate = self;
-    _webView.scrollView.scrollEnabled = NO;
+//    _webView.scrollView.scrollEnabled = NO;
     _afnetworkReachabilityManager = [AFNetworkReachabilityManager sharedManager];
     [_afnetworkReachabilityManager startMonitoring];
     
